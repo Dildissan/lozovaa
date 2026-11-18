@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shop All Products | LAZOVA</title>
+
+<meta name="description"
+      content="Browse LAZOVA natural latex mattresses, pillows, toppers and accessories with full filtering.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+
+<!--link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png"-->
+
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LAZOVA">
+<meta property="og:title" content="Shop All Products | LAZOVA">
+<meta property="og:description" content="Browse LAZOVA natural latex mattresses, pillows, toppers and accessories with full filtering.">
+<meta property="og:image" content="https://www.lazova.lk/image/shop.png">
+<meta property="og:url" content="https://www.lazova.lk/products.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shop All Products | LAZOVA">
+<meta name="twitter:description" content="Browse LAZOVA natural latex mattresses, pillows, toppers and accessories with full filtering.">
+<meta name="twitter:image" content="https://www.lazova.lk/image/shop.png">
+
+<style>
+
+/* ================= PAGE HEAD ================= */
+
+.page-head{
+    /*background:var(--forest);*/
+    background:url("images/shop.png") center/cover no-repeat;
+    height: 48vh;
+    color:#fff;
+    padding:44px 8%;
+}
+
+.breadcrumb{
+    display:flex;
+    gap:8px;
+    font-size:16px;
+    color: #111827;
+    margin-bottom:10px;
+    font-weight: bolder;
+}
+
+.breadcrumb a{
+    color:#111827;
+    text-decoration:none;
+}
+
+.breadcrumb a:hover{
+    color: blue;
+}
+
+.page-head h1{
+    font-family:var(--font-display);
+    font-size:clamp(30px,4vw,42px);
+    font-weight:800;
+    color: #111827;
+}
+
+
+/* ================= LAYOUT ================= */
+
+.shop-container{
+    width:88%;
+    max-width:1400px;
+    margin:50px auto 90px;
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:50px;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.filter-sidebar{
+    border-right:1px solid var(--line);
+    padding-right:30px;
+}
+
+.filter-sidebar h2{
+    font-family:var(--font-display);
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:16px;
+}
+
+.category-list{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    margin-bottom:10px;
+}
+
+.category-section{
+    display:flex;
+    flex-direction:column;
+}
+
+.category-filter{
+    border:none;
+    background:transparent;
+    text-align:left;
+    font-size:15px;
+    color:var(--forest-deep);
+    padding:9px 10px;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
+
+.category-filter:hover{
+    background:var(--sage-tint);
+}
+
+.category-filter.active{
+    background:var(--forest);
+    color:#fff;
+}
+
+.category-filter small{
+    font-weight:500;
+    opacity:.7;
+}
+
+.count-and-chevron{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.chevron{
+    font-size:11px;
+    transition:transform .25s ease;
+}
+
+.category-section.expanded .chevron{
+    transform:rotate(180deg);
+}
+
+.subcategory-list{
+    max-height:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:max-height .3s ease;
+}
+
+.category-section.expanded .subcategory-list{
+    max-height:400px;
+}
+
+.category-filter.sub-level{
+    font-size:13.5px;
+    font-weight:500;
+    padding:7px 10px 7px 22px;
+}
+
+.category-filter.sub-level::before{
+    content:"";
+    display:inline-block;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:currentColor;
+    opacity:.4;
+    margin-right:9px;
+    flex-shrink:0;
+}
+
+.category-filter.sub-level.active{
+    background:var(--sage-tint);
+    color:var(--forest-deep);
+    font-weight:700;
+}
+
+.category-filter.sub-level.coming-soon{
+    opacity:.55;
+}
+
+.category-filter.sub-level.coming-soon small{
+    font-style:italic;
+}
+
+.filter-section{
+    margin-top:28px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+}
+
+.filter-group{
+    margin-top:22px;
+}
+
+.filter-group h3{
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:12px;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    color:#6b6357;
+}
+
+/* PRICE */
+.price-range{
+    position:relative;
+    height:24px;
+}
+
+.range-track{
+    position:absolute;
+    left:4px;
+    right:4px;
+    top:10px;
+    height:2px;
+    background:var(--line);
+}
+
+.price-range input{
+    position:absolute;
+    width:100%;
+    top:2px;
+    left:0;
+    appearance:none;
+    background:transparent;
+    pointer-events:none;
+}
+
+.price-range input::-webkit-slider-thumb{
+    appearance:none;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:var(--forest-mid);
+    cursor:pointer;
+    pointer-events:auto;
+    margin-top:-6px;
+}
+
+.price-range input::-moz-range-thumb{
+    width:14px;
+    height:14px;
+    border:none;
+    border-radius:50%;
+    background:var(--forest-mid);
+    cursor:pointer;
+    pointer-events:auto;
+}
+
+.price-values{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    color:#555;
+    margin-top:4px;
+}
+
+/* COMFORT SCALE (density) */
+.comfort-range{
+    position:relative;
+    height:24px;
+}
+
+.comfort-track{
+    position:absolute;
+    left:4px;
+    right:4px;
+    top:9px;
+    height:5px;
+    border-radius:3px;
+    background:linear-gradient(90deg, var(--sage), var(--forest-bright), var(--forest-deep));
+}
+
+.comfort-range input{
+    position:absolute;
+    width:100%;
+    top:2px;
+    left:0;
+    appearance:none;
+    background:transparent;
+    pointer-events:none;
+}
+
+.comfort-range input::-webkit-slider-thumb{
+    appearance:none;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--clay);
+    cursor:pointer;
+    pointer-events:auto;
+    margin-top:-4px;
+}
+
+.comfort-range input::-moz-range-thumb{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--clay);
+    cursor:pointer;
+    pointer-events:auto;
+}
+
+.comfort-ends{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-weight:700;
+    color:#6b6357;
+    margin-top:4px;
+}
+
+.comfort-values{
+    font-size:13px;
+    color:#8a8378;
+    margin-top:6px;
+}
+
+/* CHECKBOXES */
+.checkbox-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:9px 0;
+    font-size:14px;
+    color:#3d382f;
+    cursor:pointer;
+}
+
+.checkbox-item input{
+    width:15px;
+    height:15px;
+    accent-color:var(--forest-mid);
+}
+
+.checkbox-item small{
+    color:#a39c8e;
+    margin-left:auto;
+}
+
+
+/* ================= TOOLBAR ================= */
+
+.products-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    margin-bottom:26px;
+    flex-wrap:wrap;
+}
+
+.products-toolbar > p{
+    font-size:14px;
+    color:#6b6357;
+}
+
+.toolbar-right{
+    display:flex;
+    gap:10px;
+}
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:220px;
+    height:40px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:0 36px 0 14px;
+    font-size:14px;
+    outline:none;
+}
+
+.search-box input:focus{
+    border-color:var(--forest-mid);
+}
+
+.search-box i{
+    position:absolute;
+    right:13px;
+    top:13px;
+    color:#a39c8e;
+    font-size:13px;
+}
+
+#sortProducts{
+    height:40px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#fff;
+    padding:0 12px;
+    font-size:14px;
+    color:#3d382f;
+    cursor:pointer;
+}
+
+
+/* ================= PRODUCT GRID ================= */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:26px 22px;
+    min-height:200px;
+}
+
+.product-card{
+    min-width:0;
+    animation:fadeProduct .35s ease;
+}
+
+@keyframes fadeProduct{
+    from{ opacity:0; transform:translateY(8px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.product-image{
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;
+    background:#f3f2ee;
+    overflow:hidden;
+    border-radius:16px;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .4s ease;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.05);
+}
+
+.wishlist{
+    position:absolute;
+    right:10px;
+    top:10px;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.92);
+    font-size:15px;
+    cursor:pointer;
+}
+
+.product-info{
+    padding-top:12px;
+}
+
+.product-name{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:4px;
+}
+
+.product-price{
+    font-size:15px;
+    font-weight:700;
+    color:var(--clay);
+}
+
+.product-rating{
+    margin-top:6px;
+    color:#e0a53c;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.product-rating span{
+    color:#8a8378;
+    font-size:12px;
+    margin-left:4px;
+    font-weight:700;
+}
+
+.product-card a{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+}
+
+.no-products{
+    grid-column:1/-1;
+    text-align:center;
+    padding:70px 20px;
+    color:#6b6357;
+}
+
+.no-products h3{
+    font-family:var(--font-display);
+    font-size:22px;
+    color:var(--forest-deep);
+    margin-bottom:8px;
+}
+
+
+/* ================= PAGINATION ================= */
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:50px;
+}
+
+.page-btn{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:#fff;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.page-btn:hover{
+    border-color:var(--forest-mid);
+}
+
+.page-btn.active{
+    background:var(--forest);
+    border-color:var(--forest);
+    color:#fff;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+    .shop-container{
+        grid-template-columns:190px 1fr;
+        gap:30px;
+    }
+    .product-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:700px){
+    .shop-container{
+        display:block;
+    }
+    .filter-sidebar{
+        display:none;
+        border:1px solid var(--line);
+        border-radius:14px;
+        padding:20px;
+        margin-bottom:26px;
+    }
+    .filter-sidebar.open{
+        display:block;
+    }
+    .mobile-filter-btn{
+        display:block;
+    }
+    .products-toolbar{
+        display:block;
+    }
+    .products-toolbar > p{
+        margin-bottom:14px;
+    }
+    .toolbar-right{
+        justify-content:space-between;
+    }
+    .search-box{
+        flex:1;
+    }
+    .search-box input{
+        width:100%;
+    }
+}
+
+/* ================= FLOATING OFFER BADGE =================
+   Always visible on the homepage — there is no close/dismiss
+   button on this badge on purpose. To edit the text shown
+   here, edit the HTML directly below (search "EDIT OFFER
+   BADGE TEXT" in this file). To edit what's on the offer
+   page itself, edit offers-data.js instead.
+============================================================ */
+
+.offer-float-badge{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    z-index:900;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:#111827;
+    border-radius:16px;
+    padding:14px 18px;
+    box-shadow:0 14px 34px rgba(16,37,23,.18);
+    max-width:300px;
+    animation:offerFloatIn .6s ease both;
+}
+
+@keyframes offerFloatIn{
+    from{ opacity:0; transform:translateY(16px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.offer-float-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--sage-tint);
+    color:var(--clay);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.offer-float-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.3;
+}
+
+.offer-float-text strong{
+    font-size:12px;
+    color:#F5D76E;
+}
+
+.offer-float-text small{
+    font-size:10px;
+    color:#FFFFFF;
+}
+
+.offer-float-btn{
+    padding:9px 16px;
+    font-size:13px;
+    border-radius:10px;
+    white-space:nowrap;
+}
+
+@media(max-width:640px){
+    .offer-float-badge{
+        left:16px;
+        right:16px;
+        bottom:16px;
+        max-width:none;
+    }
+    .offer-float-text small{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo"> <a href="index.html">LAZOVA</a> </div>
+
+    <nav aria-label="Main Navigation" id="mainNav">
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="icons">
+        <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+</header>
+
+<!-- ============================================================
+     FLOATING OFFER BADGE — always visible, no dismiss button.
+     EDIT OFFER BADGE TEXT: change the two lines below (strong/small)
+     any time. This is separate from offers-data.js on purpose so
+     you can edit this quick teaser without touching the offer page.
+============================================================= -->
+<div class="offer-float-badge">
+    <div class="offer-float-icon"><i class="fa-solid fa-gift"></i></div>
+    <div class="offer-float-text">
+        <strong>2 Special Offers</strong>
+        <small><b>Limited time — don't miss out</b></small>
+    </div>
+    <a href="offer.html" class="btn btn-primary offer-float-btn">Get Offer</a>
+</div>
+
+<section class="page-head">
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span id="breadcrumbCurrent">All Products</span>
+    </div>
+    <h1 id="pageTitle">All Products</h1>
+</section>
+
+<main class="shop-container">
+
+    <button class="mobile-filter-btn" id="mobileFilterBtn">☰ Filter Products</button>
+
+    <aside class="filter-sidebar" id="filterSidebar">
+
+        <h2>Categories</h2>
+
+        <div class="category-list" id="categoryList"></div>
+
+        <div class="filter-section">
+            <h2>Filter by</h2>
+        </div>
+
+        <div class="filter-group">
+            <h3>Price</h3>
+            <div class="price-range">
+                <div class="range-track"></div>
+                <input type="range" id="minPrice" min="0" max="1200" value="0">
+                <input type="range" id="maxPrice" min="0" max="1200" value="1200">
+            </div>
+            <div class="price-values">
+                <span>Rs. <span id="minPriceValue">0</span></span>
+                <span>Rs. <span id="maxPriceValue">1200</span>+</span>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <h3>Material</h3>
+            <div id="materialFilters"></div>
+        </div>
+
+        <div class="filter-group">
+            <h3>Size</h3>
+            <div id="sizeFilters"></div>
+        </div>
+
+        <!-- Firmness: shows the density-based Comfort Scale once products have
+             density values (see data.js); until then the old checkboxes show. -->
+        <div class="filter-group" id="firmnessGroup">
+            <h3>Firmness</h3>
+            <div id="firmnessFilters"></div>
+        </div>
+
+        <div class="filter-group" id="comfortGroup" hidden>
+            <h3>LAZOVA Comfort Scale</h3>
+            <div class="comfort-range">
+                <div class="comfort-track"></div>
+                <input type="range" id="minDensity" step="any" aria-label="Softest density">
+                <input type="range" id="maxDensity" step="any" aria-label="Firmest density">
+            </div>
+            <div class="comfort-ends">
+                <span>Soft</span>
+                <span>Firm</span>
+            </div>
+            <p class="comfort-values" id="comfortValues"></p>
+        </div>
+
+    </aside>
+
+    <section class="products-section">
+
+        <div class="products-toolbar">
+            <p id="resultsText">Showing results</p>
+
+            <div class="toolbar-right">
+                <div class="search-box">
+                    <input type="text" id="productSearch" placeholder="Search products...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <select id="sortProducts">
+                    <option value="popular">Sort by: Popularity</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                    <option value="new">Newest</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+
+        <div class="pagination" id="pagination"></div>
+
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#contact">Contact</a>
+            <a href="blog.html">Blog</a>
+            <a href="products.html">All Products</a>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <a href="faq.html">FAQ</a>
+            <a href="shipping-returns.html#shipping">Shipping</a>
+            <a href="shipping-returns.html#returns">Returns</a>
+            <a href="privacy-policy.html">Privacy Policy</a>            
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">© 2026 LAZOVA. All Rights Reserved.</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="shop.js"></script>
+
+<script src="search.js"></script>
+<script src="cart.js"></script>
+
+</body>
+</html>

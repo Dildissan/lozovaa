@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog | LAZOVA</title>
+
+<meta name="description"
+      content="Sleep tips, product care guides and wellness insights from LAZOVA.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<style>
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-family:var(--font-display);
+    font-size:clamp(28px,3.6vw,38px);
+    font-weight:600;
+    color:var(--forest-deep);
+    margin-bottom:46px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:75vh;
+    background:url("images/blog.jpg") center/cover no-repeat;
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(100deg, rgba(16,37,23,.7) 0%, rgba(16,37,23,.28) 60%, rgba(16,37,23,.08) 100%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:600px;
+    margin-left:8%;
+    animation:heroFade .9s ease both;
+}
+
+@keyframes heroFade{
+    from{ opacity:0; transform:translateY(24px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.hero-content h1{
+    font-family:var(--font-display);
+    font-size:clamp(40px,5.5vw,64px);
+    line-height:1.1;
+    font-weight:600;
+    margin-bottom:14px;
+}
+
+.hero-content p{
+    margin-bottom:26px;
+    font-size:18px;
+    color:#e6efe8;
+    max-width:44ch;
+}
+
+
+/* ================= FEATURED ================= */
+
+.featured-container{
+    display:flex;
+    gap:32px;
+    flex-wrap:wrap;
+}
+
+.featured-item{
+    flex:1;
+    min-width:300px;
+    background:#fff;
+    border-radius:16px;
+    padding:22px;
+    box-shadow:0 10px 25px rgba(16,37,23,.06);
+}
+
+.featured-item img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.featured-content h2{
+    font-family:var(--font-display);
+    font-size:24px;
+    font-weight:600;
+    color:var(--forest-deep);
+    margin-bottom:14px;
+}
+
+.featured-content p{
+    color:#4a453c;
+    margin-bottom:22px;
+}
+
+.read-btn{
+    padding:12px 26px;
+    border:none;
+    background:var(--forest-deep);
+    color:#fff;
+    cursor:pointer;
+    border-radius:10px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.read-btn:hover{
+    background:var(--forest);
+}
+
+
+/* ================= BLOG GRID ================= */
+
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.blog-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(16,37,23,.06);
+}
+
+.blog-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 34px rgba(16,37,23,.1);
+}
+
+.blog-card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.blog-content{
+    padding:24px;
+}
+
+.blog-content span{
+    color:#a39c8e;
+    font-size:13px;
+    font-weight:700;
+}
+
+.blog-content h3{
+    margin:12px 0;
+    font-size:19px;
+    color:var(--forest-deep);
+}
+
+.blog-content p{
+    color:#6b6357;
+    margin-bottom:18px;
+    font-size:14.5px;
+}
+
+.blog-content a{
+    text-decoration:none;
+    color:var(--forest-mid);
+    font-weight:700;
+    font-size:14px;
+}
+
+.blog-content a:hover{
+    color:var(--forest-bright);
+}
+
+
+/* ================= TIPS ================= */
+
+.tips{
+    background:var(--sage-tint);
+}
+
+.tip-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+}
+
+.tip{
+    padding:34px;
+    background:#fff;
+    border-radius:14px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(16,37,23,.05);
+}
+
+.tip h3{
+    margin-bottom:12px;
+    color:var(--forest-deep);
+    font-size:17px;
+}
+
+.tip p{
+    color:#6b6357;
+    font-size:14.5px;
+}
+
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+    background:linear-gradient(120deg, rgba(16,37,23,.85), rgba(16,37,23,.6)), url("image/land1.png") center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+    border-radius:24px;
+    margin:0 8%;
+    padding:70px 6%;
+}
+
+.newsletter h2{
+    font-family:var(--font-display);
+    font-size:clamp(28px,3.4vw,38px);
+    font-weight:600;
+    margin-bottom:14px;
+}
+
+.newsletter p{
+    margin-bottom:30px;
+    color:#e6efe8;
+    max-width:50ch;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.newsletter form{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.newsletter input{
+    padding:14px 18px;
+    width:320px;
+    max-width:100%;
+    border:none;
+    border-radius:10px;
+    font-family:var(--font-body);
+}
+
+.newsletter button{
+    padding:14px 30px;
+    border:none;
+    cursor:pointer;
+    background:var(--clay);
+    color:#fff;
+    border-radius:10px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.newsletter button:hover{
+    background:#9c6737;
+}
+
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:30px;
+    transform:translate(-50%,20px);
+    background:var(--forest-deep);
+    color:#fff;
+    padding:14px 26px;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:600;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+    z-index:2000;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+    section{ padding:60px 6%; }
+    .newsletter{ margin:0 6%; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="logo"> <a href="index.html">LAZOVA</a> </div>
+
+    <nav aria-label="Main Navigation" id="mainNav">
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="icons">
+        <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+</header>
+
+
+<section class="hero" style="padding:0;">
+    <div class="hero-content">
+        <h1>Our Journal</h1>
+        <p>Insights, sleep tips, product care, and wellness inspiration from LAZOVA.</p>
+        <a href="#latest" class="btn btn-primary">Explore</a>
+    </div>
+</section>
+
+
+<section>
+    <h2 class="section-title">Featured Articles</h2>
+
+    <div class="featured-container" id="featuredGrid"></div>
+</section>
+
+
+<section id="latest">
+    <h2 class="section-title">Latest Articles</h2>
+
+    <div class="blog-grid" id="latestGrid"></div>
+</section>
+
+
+<section class="tips">
+    <h2 class="section-title">Sleep Tips</h2>
+
+    <div class="tip-grid">
+
+        <div class="tip">
+            <h3>Sleep Better</h3>
+            <p>Maintain a regular sleep schedule for deeper, healthier sleep.</p>
+        </div>
+
+        <div class="tip">
+            <h3>Pillow Care</h3>
+            <p>Protect your pillow with breathable covers and avoid direct sunlight.</p>
+        </div>
+
+        <div class="tip">
+            <h3>Mattress Guide</h3>
+            <p>Choose the correct firmness level based on your sleeping position.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section>
+    <div class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe for new articles, wellness tips, and exclusive offers.</p>
+
+        <form id="newsletterForm">
+            <input type="email" id="newsletterEmail" placeholder="Your Email Address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#contact">Contact</a>
+            <a href="blog.html">Blog</a>
+            <a href="products.html">All Products</a>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <a href="faq.html">FAQ</a>
+            <a href="shipping-returns.html#shipping">Shipping</a>
+            <a href="shipping-returns.html#returns">Returns</a>
+            <a href="privacy-policy.html">Privacy Policy</a>            
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">© 2026 LAZOVA. All Rights Reserved.</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="blog-data.js"></script>
+<script src="blog.js"></script>
+
+<script src="search.js"></script>
+<script src="cart.js"></script>
+
+</body>
+</html>

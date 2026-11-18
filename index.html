@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LAZOVA | Natural Latex Mattresses & Pillows</title>
+
+<meta name="description"
+      content="Premium natural latex mattresses, pillows, toppers and accessories for healthier sleep, made in Sri Lanka.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+
+
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LAZOVA">
+<meta property="og:title" content="LAZOVA | Natural Latex Mattresses & Pillows">
+<meta property="og:description" content="Premium natural latex mattresses, pillows, toppers and accessories for healthier sleep, made in Sri Lanka.">
+<meta property="og:image" content="https://www.lazova.lk/image/bloghero-1.jpeg">
+<meta property="og:url" content="https://www.lazova.lk/index.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LAZOVA | Natural Latex Mattresses & Pillows">
+<meta name="twitter:description" content="Premium natural latex mattresses, pillows, toppers and accessories for healthier sleep, made in Sri Lanka.">
+<meta name="twitter:image" content="https://www.lazova.lk/image/bloghero-1.jpeg">
+
+<style>
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:78vh;
+    background:url("images/welcomehero.jpeg") center/cover no-repeat;
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(100deg, rgba(16,37,23,.72) 0%, rgba(16,37,23,.34) 55%, rgba(16,37,23,.12) 100%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:600px;
+    margin-left:8%;
+    animation:heroFade .9s ease both;
+}
+
+@keyframes heroFade{
+    from{ opacity:0; transform:translateY(24px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.hero-content h1{
+    font-family:var(--font-display);
+    font-size:clamp(42px,5.5vw,70px);
+    line-height:1.08;
+    font-weight:600;
+    margin-bottom:14px;
+}
+
+.hero-content p{
+    margin-bottom:26px;
+    font-size:19px;
+    color:#e6efe8;
+    max-width:38ch;
+}
+
+
+/* ================= FEATURES STRIP ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+    max-width:1200px;
+    margin:-46px auto 0;
+    padding:0 8%;
+    position:relative;
+    z-index:3;
+}
+
+.feature{
+    text-align:center;
+    padding:30px 22px;
+    border-radius:16px;
+    background:#fff;
+    box-shadow:0 14px 34px rgba(16,37,23,.1);
+}
+
+.feature i{
+    font-size:30px;
+    color:var(--forest-mid);
+    margin-bottom:14px;
+}
+
+.feature h4{
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.feature p{
+    font-size:13.5px;
+    color:#6b6357;
+}
+
+
+/* ================= SECTION HEADS ================= */
+
+.section-title{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 40px;
+    padding:0 8%;
+}
+
+.section-title h2{
+    font-family:var(--font-display);
+    font-size:36px;
+    font-weight:600;
+    color:var(--forest-deep);
+}
+
+.section-title p{
+    color:#6b6357;
+    margin-top:10px;
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    padding:90px 0 20px;
+}
+
+.category-grid{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:26px;
+}
+
+.category-card{
+    text-decoration:none;
+    color:var(--forest-deep);
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(16,37,23,.07);
+    transition:transform .3s ease, box-shadow .3s ease;
+    display:block;
+}
+
+.category-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 34px rgba(16,37,23,.12);
+}
+
+.category-card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.category-card .category-body{
+    padding:18px 20px 22px;
+}
+
+.category-card h4{
+    font-size:17px;
+    margin-bottom:4px;
+}
+
+.category-card p{
+    font-size:13.5px;
+    color:#6b6357;
+}
+
+.category-shop-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:14px;
+    padding:9px 18px;
+    border-radius:30px;
+    background:var(--sage-tint);
+    color:var(--forest-mid);
+    font-weight:700;
+    font-size:13px;
+    transition:background .25s ease, color .25s ease;
+}
+
+.category-shop-btn i{
+    font-size:11px;
+    transition:transform .25s ease;
+}
+
+.category-card:hover .category-shop-btn{
+    background:var(--forest-mid);
+    color:#fff;
+}
+
+.category-card:hover .category-shop-btn i{
+    transform:translateX(4px);
+}
+
+
+/* ================= BANNER ================= */
+
+.banner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+    max-width:1200px;
+    margin:100px auto;
+    padding:0 8%;
+}
+
+.banner img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(16,37,23,.1);
+}
+
+.banner-content h2{
+    font-family:var(--font-display);
+    font-size:clamp(30px,3.4vw,44px);
+    font-weight:600;
+    color:var(--forest-deep);
+    margin-bottom:18px;
+}
+
+.banner-content p{
+    color:#4a453c;
+    margin-bottom:26px;
+    max-width:46ch;
+}
+
+@media(max-width:860px){
+    .banner{
+        grid-template-columns:1fr;
+        margin:70px auto;
+    }
+}
+
+
+/* ================= BEST SELLERS ================= */
+
+.favorites{
+    background:var(--sage-tint);
+    padding:90px 0 100px;
+}
+
+.product-grid{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:28px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(16,37,23,.06);
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 32px rgba(16,37,23,.1);
+}
+
+.product-card .product-image{
+    aspect-ratio:1/1;
+    background:#f3f2ee;
+    overflow:hidden;
+}
+
+.product-card .product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.product-card .product-info{
+    padding:18px 20px 22px;
+}
+
+.product-card .product-category{
+    font-size:12px;
+    font-weight:700;
+    color:var(--forest-mid);
+    margin-bottom:6px;
+}
+
+.product-card h3{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.product-card .price{
+    color:var(--clay);
+    font-weight:700;
+}
+
+.product-card .rating{
+    margin-top:8px;
+    font-size:14px;
+    color:#e0a53c;
+    letter-spacing:1px;
+}
+
+.product-card .rating span{
+    color:#8a8378;
+    font-size:12px;
+    margin-left:4px;
+    font-weight:700;
+}
+
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonials{
+    padding:90px 0 100px;
+}
+
+.testimonials-grid{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:26px;
+}
+
+.testimonial-card{
+    background:var(--sage-tint);
+    border-radius:16px;
+    padding:26px 24px;
+}
+
+.testimonial-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:14px;
+}
+
+.testimonial-avatar{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:var(--forest);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:14px;
+    flex-shrink:0;
+}
+
+.testimonial-name{
+    font-weight:700;
+    font-size:14px;
+    color:var(--forest-deep);
+}
+
+.testimonial-product{
+    font-size:12.5px;
+    color:#6b6357;
+}
+
+.testimonial-stars{
+    color:#e0a53c;
+    font-size:13px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.testimonial-text{
+    color:#4a453c;
+    font-size:14.5px;
+    line-height:1.7;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:26px;
+    max-width:1000px;
+    margin:0 auto;
+    padding:90px 8% 100px;
+    text-align:center;
+}
+
+.service i{
+    font-size:28px;
+    color:var(--forest-mid);
+    margin-bottom:12px;
+}
+
+.service h4{
+    margin-bottom:6px;
+    font-size:16px;
+}
+
+.service p{
+    font-size:14px;
+    color:#6b6357;
+}
+
+/* ================= FLOATING OFFER BADGE =================
+   Always visible on the homepage — there is no close/dismiss
+   button on this badge on purpose. To edit the text shown
+   here, edit the HTML directly below (search "EDIT OFFER
+   BADGE TEXT" in this file). To edit what's on the offer
+   page itself, edit offers-data.js instead.
+============================================================ */
+
+.offer-float-badge{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    z-index:900;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:#111827;
+    border-radius:16px;
+    padding:14px 18px;
+    box-shadow:0 14px 34px rgba(16,37,23,.18);
+    max-width:300px;
+    animation:offerFloatIn .6s ease both;
+}
+
+@keyframes offerFloatIn{
+    from{ opacity:0; transform:translateY(16px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.offer-float-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--sage-tint);
+    color:var(--clay);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.offer-float-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.3;
+}
+
+.offer-float-text strong{
+    font-size:12px;
+    color:#F5D76E;
+}
+
+.offer-float-text small{
+    font-size:10px;
+    color:#FFFFFF;
+}
+
+.offer-float-btn{
+    padding:9px 16px;
+    font-size:13px;
+    border-radius:10px;
+    white-space:nowrap;
+}
+
+@media(max-width:640px){
+    .offer-float-badge{
+        left:16px;
+        right:16px;
+        bottom:16px;
+        max-width:none;
+    }
+    .offer-float-text small{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo"> <a href="index.html">LAZOVA</a> </div>
+
+    <nav aria-label="Main Navigation" id="mainNav">
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="icons">
+        <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+</header>
+
+<!-- ============================================================
+     FLOATING OFFER BADGE — always visible, no dismiss button.
+     EDIT OFFER BADGE TEXT: change the two lines below (strong/small)
+     any time. This is separate from offers-data.js on purpose so
+     you can edit this quick teaser without touching the offer page.
+============================================================= -->
+<div class="offer-float-badge">
+    <div class="offer-float-icon"><i class="fa-solid fa-gift"></i></div>
+    <div class="offer-float-text">
+        <strong>2 Special Offers</strong>
+        <small><b>Limited time — don't miss out</b></small>
+    </div>
+    <a href="offer.html" class="btn btn-primary offer-float-btn">Get Offer</a>
+</div>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Pure Latex.<br>Pure Comfort.</h1>
+        <p>Better choice, better experience — natural latex sleep essentials, made for Sri Lankan homes.</p>
+        <a href="products.html" class="btn btn-primary">Shop Now</a>
+    </div>
+</section>
+
+
+<section class="features">
+
+    <article class="feature">
+        <i class="fa-regular fa-circle-check"></i>
+        <h4>100% Natural Latex</h4>
+        <p>Made from pure rubber tree sap.</p>
+    </article>
+
+    <article class="feature">
+        <i class="fa-solid fa-bed"></i>
+        <h4>Ergonomic Support</h4>
+        <p>Designed for healthy sleep.</p>
+    </article>
+
+    <article class="feature">
+        <i class="fa-solid fa-wind"></i>
+        <h4>Breathable & Cool</h4>
+        <p>Stay cool all night.</p>
+    </article>
+
+    <article class="feature">
+        <i class="fa-solid fa-shield"></i>
+        <h4>Durable Quality</h4>
+        <p>Long-lasting comfort.</p>
+    </article>
+
+</section>
+
+
+<section class="categories" id="collections">
+
+    <div class="section-title">
+        <h2>Shop by Category</h2>
+        <p>Five ways to sleep better, every one of them natural latex.</p>
+    </div>
+
+    <div class="category-grid" id="categoryGrid"></div>
+
+</section>
+
+
+<section class="banner">
+
+    <div class="banner-image">
+        <img src="images/banner.jpg" alt="Natural latex mattress in a bedroom">
+    </div>
+
+    <div class="banner-content">
+        <h2>Better Sleep,<br>Better Life</h2>
+        <p>
+            Our natural latex products are thoughtfully designed
+            to provide the perfect balance of comfort, support,
+            and durability — built to last, and easy on the planet.
+        </p>
+        <a href="about.html" class="btn btn-primary">Learn More</a>
+    </div>
+
+</section>
+
+
+<section class="favorites">
+
+    <div class="section-title">
+        <h2>Best Sellers</h2>
+        <p>The pieces our sleepers reorder and recommend most, one from every collection.</p>
+    </div>
+
+    <div class="product-grid" id="favoritesGrid"></div>
+
+</section>
+
+
+<section class="testimonials" id="testimonialsSection">
+
+    <div class="section-title">
+        <h2>What Our Customers Say</h2>
+        <p>Real feedback from people sleeping on LAZOVA.</p>
+    </div>
+
+    <div class="testimonials-grid" id="testimonialsGrid"></div>
+
+</section>
+
+
+<section class="services">
+
+    <article class="service">
+        <i class="fa-solid fa-truck"></i>
+        <h4>Free Shipping</h4>
+        <p>On all orders over LKR 125,000</p>
+    </article>
+
+    <article class="service">
+        <i class="fa-regular fa-moon"></i>
+        <h4>24-Hours Trial</h4>
+        <p>Love it or Return it</p>
+    </article>
+
+    <article class="service">
+        <i class="fa-solid fa-shield"></i>
+        <h4>3-Year Warranty</h4>
+        <p>Quality you can trust</p>
+    </article>
+
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#contact">Contact</a>
+            <a href="blog.html">Blog</a>
+            <a href="products.html">All Products</a>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <a href="faq.html">FAQ</a>
+            <a href="shipping-returns.html#shipping">Shipping</a>
+            <a href="shipping-returns.html#returns">Returns</a>
+            <a href="privacy-policy.html">Privacy Policy</a>            
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">© 2026 LAZOVA. All Rights Reserved.</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="reviews-data.js"></script>
+<script src="home.js"></script>
+<script src="search.js"></script>
+<script src="cart.js"></script>
+
+</body>
+</html>

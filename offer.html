@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Special Offers | LAZOVA</title>
+<meta name="description" content="Exclusive limited-time offers on natural latex mattresses and pillows from LAZOVA.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+
+<!--link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png"-->
+
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<style>
+
+/* ================= OFFER HERO ================= */
+
+.offer-hero{
+    padding:56px 8% 10px;
+}
+
+/* ================= OFFERS GRID ================= */
+
+.offers-page{
+    width:88%;
+    max-width:1000px;
+    margin:0 auto 20px;
+}
+
+.offers-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.offer-card{
+    position:relative;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(16,37,23,.08);
+    display:flex;
+    flex-direction:column;
+}
+
+.offer-tag{
+    position:absolute;
+    top:16px;
+    left:16px;
+    z-index:2;
+    font-size:12px;
+    font-weight:700;
+    color:#fff;
+    background:var(--clay);
+    padding:6px 14px;
+    border-radius:30px;
+}
+
+.offer-image{
+    aspect-ratio:4/3;
+    background:#f3f2ee;
+    overflow:hidden;
+}
+
+.offer-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.offer-body{
+    padding:22px 24px 26px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.offer-body h3{
+    font-family:var(--font-display);
+    font-size:21px;
+    font-weight:600;
+    color:var(--forest-deep);
+    margin-bottom:8px;
+}
+
+.offer-description{
+    color:#4a453c;
+    font-size:14.5px;
+    line-height:1.7;
+    margin-bottom:14px;
+}
+
+.offer-price{
+    font-size:24px;
+    font-weight:800;
+    color:var(--clay);
+    margin-bottom:4px;
+}
+
+.offer-original-price{
+    font-size:15px;
+    font-weight:600;
+    color:#8a8378;
+    text-decoration:line-through;
+    margin-left:8px;
+}
+
+.offer-valid{
+    font-size:12.5px;
+    color:#8a8378;
+    margin-bottom:16px;
+}
+
+.offer-claim-btn{
+    margin-top:auto;
+    width:100%;
+}
+
+/* ================= CLOSE OFFER ================= */
+
+.close-offer-wrap{
+    text-align:center;
+    margin:12px auto 90px;
+}
+
+.btn-secondary{
+    background:#fff;
+    color:var(--forest-deep);
+    border:1.5px solid var(--line);
+}
+
+.btn-secondary:hover{
+    border-color:var(--forest-mid);
+    color:var(--forest-mid);
+}
+
+
+/* ================= BUY BUTTON (reused look) ================= */
+
+.buy-btn{
+    background:var(--clay);
+    color:#fff;
+}
+
+.buy-btn:hover{
+    background:#9c6737;
+}
+
+
+/* ================= ORDER MODAL (same as product page) ================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(16,37,23,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    z-index:3000;
+}
+
+.modal-overlay.open{
+    display:flex;
+}
+
+.order-modal{
+    background:#fff;
+    border-radius:20px;
+    width:100%;
+    max-width:460px;
+    max-height:90vh;
+    overflow-y:auto;
+    padding:32px;
+    position:relative;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:18px;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:none;
+    background:var(--sage-tint);
+    font-size:16px;
+    cursor:pointer;
+    color:var(--forest-deep);
+}
+
+.modal-close:hover{
+    background:var(--sage);
+    color:#fff;
+}
+
+.order-slip h2{
+    font-family:var(--font-display);
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:4px;
+}
+
+.order-slip .order-meta{
+    font-size:13px;
+    color:#8a8378;
+    margin-bottom:22px;
+}
+
+.order-slip .order-meta strong{
+    color:var(--forest-deep);
+}
+
+.order-line{
+    display:flex;
+    gap:14px;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.order-line img{
+    width:64px;
+    height:64px;
+    border-radius:10px;
+    object-fit:cover;
+    background:#f3f2ee;
+}
+
+.order-line-details{
+    flex:1;
+}
+
+.order-line-details .name{
+    font-weight:700;
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.order-line-details .meta{
+    font-size:13px;
+    color:#6b6357;
+}
+
+.order-totals{
+    padding:16px 0;
+    font-size:14px;
+}
+
+.order-totals .row{
+    display:flex;
+    justify-content:space-between;
+    padding:5px 0;
+    color:#4a453c;
+}
+
+.order-totals .row.total{
+    font-size:18px;
+    font-weight:800;
+    color:var(--forest-deep);
+    padding-top:12px;
+    margin-top:6px;
+    border-top:1px solid var(--line);
+}
+
+.order-note{
+    background:var(--sage-tint);
+    border-radius:12px;
+    padding:14px 16px;
+    font-size:13.5px;
+    color:var(--forest-deep);
+    line-height:1.6;
+    margin:18px 0 22px;
+}
+
+.order-actions{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.whatsapp-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:#25D366;
+    color:#fff;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5a;
+}
+
+.pdf-btn{
+    background:#fff;
+    color:var(--forest-deep);
+    border:1.5px solid var(--line);
+}
+
+.pdf-btn:hover{
+    border-color:var(--forest-mid);
+    color:var(--forest-mid);
+}
+
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    #printArea, #printArea *{
+        visibility:visible;
+    }
+
+    #printArea{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    .modal-close,
+    .order-actions{
+        display:none !important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo"> <a href="index.html">LAZOVA</a> </div>
+
+    <nav aria-label="Main Navigation" id="mainNav">
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="icons">
+        <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+</header>
+
+<section class="offer-hero">
+    <div class="section-title">
+        <h2>Special Offers</h2>
+        <p>Two exclusive deals, available for a limited time only.</p>
+    </div>
+</section>
+
+<div class="offers-page">
+    <div class="offers-grid" id="offersGrid"></div>
+</div>
+
+<div class="close-offer-wrap">
+    <button class="btn btn-secondary" id="closeOfferBtn">Close Offer</button>
+</div>
+
+<div class="modal-overlay" id="orderModalOverlay">
+    <div class="order-modal">
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+        <div id="printArea"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#contact">Contact</a>
+            <a href="blog.html">Blog</a>
+            <a href="products.html">All Products</a>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <a href="faq.html">FAQ</a>
+            <a href="shipping-returns.html#shipping">Shipping</a>
+            <a href="shipping-returns.html#returns">Returns</a>
+            <a href="privacy-policy.html">Privacy Policy</a>            
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">© 2026 LAZOVA. All Rights Reserved.</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="offers-data.js"></script>
+<script src="offer.js"></script>
+
+<script src="search.js"></script>
+<script src="cart.js"></script>
+
+</body>
+</html>

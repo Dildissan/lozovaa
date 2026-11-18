@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FAQ | LAZOVA</title>
+
+<meta name="description"
+      content="Answers about LAZOVA natural latex products, materials, orders, delivery and care.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<style>
+
+/* ================= HERO ================= */
+
+.faq-hero{
+    height:70vh;
+    position:relative;
+}
+
+.faq-hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:rgba(16,37,23,.55);
+    color:#fff;
+    padding:0 6%;
+}
+
+.hero-overlay h1{
+    font-family:var(--font-display);
+    font-size:clamp(34px,4.6vw,56px);
+    font-weight:600;
+    margin-bottom:16px;
+}
+
+.hero-overlay p{
+    font-size:17px;
+    max-width:600px;
+    color:#e6efe8;
+}
+
+
+/* ================= FAQ AREA ================= */
+
+.faq-section{
+    width:80%;
+    max-width:840px;
+    margin:90px auto;
+}
+
+.faq-section h2{
+    font-family:var(--font-display);
+    font-size:30px;
+    font-weight:600;
+    margin:50px 0 20px;
+    color:var(--forest-deep);
+}
+
+.faq-section h2:first-child{
+    margin-top:0;
+}
+
+.faq-item{
+    border-bottom:1px solid var(--line);
+}
+
+.faq-question{
+    width:100%;
+    padding:22px 4px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    font-size:16.5px;
+    font-weight:700;
+    text-align:left;
+    color:var(--forest-deep);
+    font-family:var(--font-body);
+}
+
+.faq-question span{
+    font-size:22px;
+    color:var(--forest-mid);
+    transition:.3s;
+    flex-shrink:0;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+}
+
+.faq-answer p{
+    padding:0 4px 22px;
+    line-height:1.8;
+    color:#6b6357;
+}
+
+.faq-item.active .faq-question span{
+    transform:rotate(45deg);
+}
+
+
+/* ================= CONTACT BOX ================= */
+
+.contact-box{
+    margin-top:70px;
+    background:var(--sage-tint);
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.contact-box h3{
+    font-family:var(--font-display);
+    font-size:28px;
+    font-weight:600;
+    color:var(--forest-deep);
+    margin-bottom:12px;
+}
+
+.contact-box p{
+    color:#6b6357;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:800px){
+
+    .faq-section{
+        width:90%;
+    }
+
+    .contact-box{
+        padding:32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo"> <a href="index.html">LAZOVA</a> </div>
+
+    <nav aria-label="Main Navigation" id="mainNav">
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="icons">
+        <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+</header>
+
+
+<section class="faq-hero">
+    <img src="images/faq.png" alt="Natural latex sleeping comfort">
+    <div class="hero-overlay">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers about our natural latex products, quality, delivery and care.</p>
+    </div>
+</section>
+
+
+<section class="faq-section">
+
+    <h2>Products & Materials</h2>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            What is natural latex?<span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Natural latex is a renewable material collected from rubber trees. It provides excellent comfort, durability and body support.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Why choose natural latex products?<span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Natural latex offers pressure relief, long-lasting performance and a healthier sleeping environment.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            How long does a LAZOVA mattress last?<span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>A premium latex mattress can provide comfort and support for more than 15 years with proper care.</p>
+        </div>
+    </div>
+
+    <h2>Orders & Delivery</h2>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            How long will delivery take?<span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Delivery time depends on your location within Sri Lanka. We'll confirm an estimated delivery date over WhatsApp once your order is verified.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            How do I place an order?<span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Choose your product, tap Buy Now, and you'll get an order summary you can send to us on WhatsApp for verification. We don't take online payments — everything is confirmed directly with our team.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            Can I change my order?<span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Order changes are possible before production or shipping begins. Just message us on WhatsApp with your order reference.</p>
+        </div>
+    </div>
+
+    <h2>Care Instructions</h2>
+
+    <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+            How do I clean latex products?<span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Use a soft cloth and mild cleaner. Avoid soaking latex materials with water, and keep them out of direct sunlight for long periods.</p>
+        </div>
+    </div>
+
+    <div class="contact-box">
+        <h3>Still Have Questions?</h3>
+        <p>Our customer support team is ready to help you on WhatsApp.</p>
+        <a href="#" id="contactWhatsapp" class="btn btn-primary" style="margin-top:22px;display:inline-block;">
+            <i class="fa-brands fa-whatsapp"></i> Contact Us
+        </a>
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#contact">Contact</a>
+            <a href="blog.html">Blog</a>
+            <a href="products.html">All Products</a>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <a href="faq.html">FAQ</a>
+            <a href="shipping-returns.html#shipping">Shipping</a>
+            <a href="shipping-returns.html#returns">Returns</a>
+            <a href="privacy-policy.html">Privacy Policy</a>            
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">© 2026 LAZOVA. All Rights Reserved.</div>
+</footer>
+
+<script>
+
+const WHATSAPP_NUMBER = "94713443701";
+
+document.getElementById("contactWhatsapp").href =
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi LAZOVA, I have a question about your products.")}`;
+
+document.getElementById("contactWhatsapp").target = "_blank";
+
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(question => {
+
+    question.addEventListener("click", () => {
+
+        const item = question.parentElement;
+        const answer = item.querySelector(".faq-answer");
+        const isOpen = item.classList.contains("active");
+
+        // close any other open items (accordion behaviour)
+        document.querySelectorAll(".faq-item.active").forEach(openItem => {
+            if (openItem !== item) {
+                openItem.classList.remove("active");
+                openItem.querySelector(".faq-answer").style.maxHeight = null;
+                openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+            }
+        });
+
+        if (isOpen) {
+            item.classList.remove("active");
+            answer.style.maxHeight = null;
+            question.setAttribute("aria-expanded", "false");
+        } else {
+            item.classList.add("active");
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            question.setAttribute("aria-expanded", "true");
+        }
+
+    });
+
+});
+
+</script>
+
+<script src="search.js"></script>
+<script src="cart.js"></script>
+
+</body>
+</html>
